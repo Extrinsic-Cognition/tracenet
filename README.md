@@ -37,10 +37,30 @@ membrane/
     bip39-english.txt      Standard BIP39 wordlist for seed-phrase detection
 ```
 
-## Running Tests (Standalone, Zero Dependencies)
+## Running the P2P Node & Tests
 
 ```bash
+# Privacy membrane + 22-kind canary recall tests (Node, zero npm dependencies)
 node --test membrane/tracenet-sanitize.test.mjs membrane/tracenet-offer/offer.test.mjs
+
+# Live 2-peer iroh 0.97 P2P integration tests (handshake, iroh-blobs, consent, tit-for-tat)
+cargo test --manifest-path node/Cargo.toml
+
+# Run the live 2-peer Open Traces demo (privacy gate -> dual-sign -> iroh-gossip + iroh-blobs -> receipt)
+cargo run --manifest-path node/Cargo.toml -- demo
+
+# CLI commands
+cargo run --manifest-path node/Cargo.toml -- init
+cargo run --manifest-path node/Cargo.toml -- offer path/to/trace.txt rust
+```
+
+## Syncing From a Private Forge
+
+[`scripts/sync-public.sh`](scripts/sync-public.sh) exports committed changes from the private `house` monorepo into standalone `tracenet`, `poleis`, and `swarmbook`, scrubbing local paths, running full test suites + `gitleaks`, and refusing to push unless every check passes:
+
+```bash
+bash scripts/sync-public.sh all          # dry-run commit locally
+bash scripts/sync-public.sh all --push   # verify + push
 ```
 
 ## License
