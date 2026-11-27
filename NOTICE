@@ -1,0 +1,7 @@
+TraceNet — Open Traces Protocol & Privacy Membrane
+Copyright 2026 Extrinsic Cognition, Inc.
+
+Licensing split:
+- Protocol specifications (TRACENET.md, TRACENET2.md, specs/*): CC0-1.0 (see LICENSE-CC0).
+- Reference implementation, privacy membrane, and SDK code (membrane/*): Apache-2.0 (see LICENSE).
+- COLLECTI-LICENSE-DRAFT.md is a conceptual working draft only and does not modify the licenses above.

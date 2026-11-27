@@ -42,3 +42,8 @@ membrane/
 ```bash
 node --test membrane/tracenet-sanitize.test.mjs membrane/tracenet-offer/offer.test.mjs
 ```
+
+## License
+
+- **Specifications (`TRACENET.md`, `TRACENET2.md`, `specs/`):** [CC0-1.0](LICENSE-CC0)
+- **Code (`membrane/` & SDKs):** [Apache-2.0](LICENSE) (see [NOTICE](NOTICE))
